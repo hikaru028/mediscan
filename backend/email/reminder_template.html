@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Email</title>
+    <script>
+        // Product data
+        const products = [
+            { name: "Ascozin", price: 9.99 },
+            { name: "Lactezin", price: 22.99 },
+            { name: "Sertraline", price: 24.99 },
+            { name: "Rosuvastatin", price: 26.99 },
+        ];
+
+        function updateTotal() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            let total = 0;
+
+            checkboxes.forEach(checkbox => {
+                const productName = checkbox.value;
+                const quantityInput = document.getElementById(`quantity-${productName}`);
+                const quantity = parseInt(quantityInput.value) || 0; // Default to 0 if input is invalid
+                const product = products.find(p => p.name === productName);
+                if (product) {
+                    total += product.price * quantity;
+                }
+            });
+
+            document.getElementById("totalPrice").innerText = `$${total.toFixed(2)}`;
+        }
+
+        function purchase() {
+            // Here you can add purchase logic
+            alert("The selected products have been added to your cart for purchase.");
+        }
+    </script>
+</head>
+
+<body style="margin: 0; padding: 0; width: 100%; font-family: Arial, sans-serif;">
+    <!-- Logo -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/logos/logo-email.png" alt="logo"
+            style="max-width: 50px; height: auto; object-fit: cover;" />
+    </div>
+
+    <!-- Message -->
+    <div style="text-align: center;">
+        <h2 style="color: #85ccb8;">Reminder: Recent Purchases</h2>
+    </div>
+    <div style="text-align: left; padding: 20px;">
+        <p>Hello, dear customer. It has been 14 days since your last purchase in our store. We hope you are doing well.</p>
+        <p style="margin-top: 20px;">Here are your last 5 purchase records:</p>
+
+        <!-- Order Information -->
+        <div style="width: 100%; margin: 0; background-color: #EAFAF5; padding: 10px; box-sizing: border-box;">
+            <h3 style="text-align: center; margin: 0; color: #002020;">Your Recent Orders</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                <thead>
+                    <tr style="color: #002020;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">Select</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Product Name</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Quantity</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="color: #002020;">
+                        <td style="border: 1px solid #ddd; padding: 8px;"><input type="checkbox" value="Ascozin" onchange="updateTotal()"></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Ascozin</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            <input type="number" id="quantity-Ascozin" value="1" min="1" onchange="updateTotal()" style="width: 50px;">
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$9.99</td>
+                    </tr>
+                    <tr style="color: #002020;">
+                        <td style="border: 1px solid #ddd; padding: 8px;"><input type="checkbox" value="Lactezin" onchange="updateTotal()"></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Lactezin</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            <input type="number" id="quantity-Lactezin" value="1" min="1" onchange="updateTotal()" style="width: 50px;">
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$22.99</td>
+                    </tr>
+                    <tr style="color: #002020;">
+                        <td style="border: 1px solid #ddd; padding: 8px;"><input type="checkbox" value="Sertraline" onchange="updateTotal()"></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Sertraline</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            <input type="number" id="quantity-Sertraline" value="1" min="1" onchange="updateTotal()" style="width: 50px;">
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$24.99</td>
+                    </tr>
+                    <tr style="color: #002020;">
+                        <td style="border: 1px solid #ddd; padding: 8px;"><input type="checkbox" value="Rosuvastatin" onchange="updateTotal()"></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Rosuvastatin</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            <input type="number" id="quantity-Rosuvastatin" value="1" min="1" onchange="updateTotal()" style="width: 50px;">
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$26.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="width: 90%; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: flex-end;">
+            <div style="font-weight: bold; color: #002020;">Total: <span id="totalPrice">$0.00</span></div>
+            <button onclick="purchase()" style="margin-top: 20px; padding: 10px 20px; background-color: #85ccb8; border: none; color: white; cursor: pointer;">Purchase</button>
+        </div>
+    </div>
+
+    <!-- Help -->
+    <div style="background-color: #eee; padding: 20px; margin-bottom: 20px;">
+        <h2 style="color: #85ccb8;">Need Help?</h2>
+        <p style="color: #002020; font-size: 16px;">We continuously care about your health and want to ask if you are interested in making another purchase.</p>
+        <p style="color: #002020; font-size: 16px;">If you have any questions regarding your order, feel free to contact our support team.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #85ccb8; padding: 20px; color: #fff;">
+        <div style="text-align: left;">
+            <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/logo-email2.png" alt="logo"
+                style="width: 50px; height: auto; object-fit: cover;" />
+        </div>
+        <div style="display: flex; justify-content: space-evenly; align-items: flex-end;">
+            <div>
+                <p>Help centre</p>
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Unsubscribe</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

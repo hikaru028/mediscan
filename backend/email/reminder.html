@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Email Template</title>
+</head>
+
+<body style="margin: 0; padding: 0; width: 100%; font-family: Arial, sans-serif;">
+    <!-- Logo -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/logos/logo-email.png" alt="logo"
+            style="max-width: 50px; height: auto; object-fit: cover;" />
+    </div>
+
+    <!-- Message -->
+    <div style="text-align: center;">
+        <h2 style="color: #85ccb8;">Time to Reorder Your Products!</h2>
+    </div>
+    <div style="text-align: left; padding: 20px;">
+        <p>Hello again!</p>
+        <p style="margin-top: 20px;">We hope our products has been supporting your health and well- being! It has been a
+            month since your last order, and we wanted to remind you that it might be time to reorder.</p>
+        <p style="margin-top: 20px;">
+            Here are the details of your previous order:
+        </p>
+
+        <!-- Order history button -->
+        <div style="text-align: center; margin-bottom: 10px;">
+            <button onclick="window.location.href='https://yourwebsite.com/orders/{order_number}'"
+                style="background-color: #85ccb8; color: #fff; font-size: 12px; border: none; border-radius: 50px; padding: 20px 30px; cursor: pointer; margin-top: 20px;">
+                Order again
+            </button>
+        </div>
+    </div>
+
+    <!-- Order Information -->
+    <div style="width: 100%; margin: 0; background-color: #EAFAF5; padding: 10px; box-sizing: border-box;">
+        <h3 style="text-align: center; margin: 0 0 10px 0; color: #002020;">Now, you may need...</h3>
+        {items_html}
+    </div>
+
+    <!-- Help -->
+    <div style="background-color: #eee; padding: 20px; margin-bottom: 20px;">
+        <h2 style="color: #85ccb8;">"We are here to support!"</h2>
+        <p style="color: #002020; font-size: 16px;">If you have any questions, feel free to contact our support
+            team.</p>
+        <div style="display: flex; justify-content: space-evenly;">
+            <div style="text-align: left;">
+                <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/feature-3.png" alt="img"
+                    style="width: 200px; height: auto; object-fit: cover;" />
+            </div>
+            <div style="text-align: center; justify-content: center; align-items: center;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <button
+                        style="margin-top: 20px; background-color: #85ccb8; color: #fff; border: none; border-radius: 50px; padding: 10px 25px; cursor: pointer;">(+64)
+                        03 420 123</button>
+                    <button
+                        style="margin-top: 20px; background-color: #85ccb8; color: #fff; border: none; border-radius: 50px; padding: 10px 25px; cursor: pointer;">support@frw.com</button>
+                </div>
+                <p style="color: #002020; font-size: 12px; text-align: right">also available on social networks</p>
+                <div style="display: flex; justify-content: flex-end; align-items: center;">
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/facebook.png"
+                        alt="sm" style="width: 20px; height: 20px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/instagram.png"
+                        alt="sm" style="width: 20px; height: 20px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/linkedin.png"
+                        alt="sm" style="width: 20px; height: 20px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/x.png" alt="sm"
+                        style="width: 20px; height: 20px; margin-left: 17px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- More Information -->
+    <div style="margin-bottom: 20px; text-align: left; padding: 20px;">
+        <h3 style="color: #002020;">Keep up to date!</h3>
+        <p style="color: #002020;">Keep up with the latest and greatest products, offers, and deals.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #85ccb8; padding: 20px; color: #fff;">
+        <div style="text-align: left;">
+            <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/logo-email2.png" alt="logo"
+                style="width: 50px; height: auto; object-fit: cover;" />
+        </div>
+        <div style="display: flex; justify-content: space-evenly; align-items: flex-end;">
+            <div>
+                <p>Help centre</p>
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Unsubscribe</p>
+            </div>
+            <div style="text-align: right;">
+                <div style="display: flex; justify-content: flex-end;">
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/facebook-2.png"
+                        alt="sm" style="width: 15px; height: 15px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/instagram-2.png"
+                        alt="sm" style="width: 15px; height: 15px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/linkedin-2.png"
+                        alt="sm" style="width: 15px; height: 15px; margin-left: 17px;" />
+                    <img src="https://datawithimages.s3.ap-southeast-2.amazonaws.com/mobile/images/x-2.png" alt="sm"
+                        style="width: 15px; height: 15px; margin-left: 17px;" />
+                </div>
+                <p style="font-size: 14px;">FRW Healthcare Ltd.</p>
+                <p style="font-size: 14px;">
+                    123 King Street,<br />
+                    Christchurch Central City 8013
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
